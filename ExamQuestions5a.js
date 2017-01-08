@@ -53,7 +53,8 @@
 //this i ES6 laver ikke sin egen context. Så den har sin context fra den ydre skal.
 
 
-// WHAT THE FUQ? !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Når man bruger arrowfunktions så beholder den scope til udenfor. Mens bruger man ikke arrowfunktion
+//(altså traditionel funktion) så henviser this til et lokalt scope.
 
 
 //Rest Parametre i ES6 ------------------------
@@ -93,6 +94,11 @@
 // console.log("'foo' is indeed deleted: " + map.has('foo'))  //returns false
 
 
+
+
+
+
+
 //Question 3 - Explain and demonstrate how es2015 supports modules (import and export) similar to what -----------------
 // is offered by NodeJS.
 
@@ -100,14 +106,21 @@
 //VIRKER IKKE?!?
 // export function square(x) { return x * x; }
 //
-// export function  diag(x, y) { return x + y; }
+// export function diag(x, y) { return x + y; }
+
+
+
+
+
+
+
 
 
 // Question 4 ----------------------------------------------------------------------------------------------------------
 // Provide an example of ES6 inheritance and reflect over the differences between Inheritance in Java and in ES6.
 
 /*
- I ES6 behøver den klasse som arver fra en anden klasse, ikke en kontstruktor. Firkant har stadig adgang til
+ I ES6 behøver den klasse som arver fra en anden klasse, ikke en konstruktor. Firkant har stadig adgang til
  konstruktoren fra Shape. Men i javascript SKAL der være en konstruktor.
  I JAVA behøves der ikke en konstruktor, men har man en konstruktor SKAL der være konstruktor i de klasser som arver.
  */
@@ -131,6 +144,12 @@
 // var firkant = new Firkant("grøn"); // når man laver en firkant har den automatisk color fra Shape, via arv.
 //
 // console.log(firkant.returncolor())
+
+
+
+
+
+
 
 
 //Question 5 -----------------------------------------------------------------------------------------------------------
@@ -189,6 +208,9 @@
 // }).catch((e) => {
 //     console.log(e)
 // })
+
+
+
 
 
 
@@ -255,20 +277,23 @@ Generatorer er funktioner som kan blive paused eller genoptaget.-------------
 // // 1 2 3 4 5
 
 
+
+
+
 //Blocking calls------------
 
 //Blocking call returnerer først når alle er færdige og i den rigtige rækkefølge.
 
-let slow = new Promise((resolve) => {
-    setTimeout(resolve, 2000, 'slow');
-});
-let instant = 'instant';
-
-let quick = new Promise((resolve) => {
-    setTimeout(resolve, 50, 'quick');
-});
-
-//Rigtig rækkefølge
-Promise.all([slow, instant, quick]).then((responses) => {
-    console.log(responses)
-});
+// let slow = new Promise((resolve) => {
+//     setTimeout(resolve, 2000, 'slow');
+// });
+// let instant = 'instant';
+//
+// let quick = new Promise((resolve) => {
+//     setTimeout(resolve, 50, 'quick');
+// });
+//
+// //Rigtig rækkefølge
+// Promise.all([slow, instant, quick]).then((responses) => {
+//     console.log(responses)
+// });
